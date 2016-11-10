@@ -89,7 +89,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">Last edited: 2016-11-09 22:22</p>
+            <p style="margin-top: 6px; margin-left: -2px;">Last edited: 2016-11-09 22:25</p>
           </hgroup>
   </slide>
 
@@ -146,54 +146,14 @@ p(x,y) &amp;= {p_{\tiny{X|Y}}}(x|y){p_{\tiny{Y}}}(x)\\
 
 <p>The concept is similar. We examine a &quot;slice&quot; of the joint density at, say \(X=x\) and consider the distribution of \(Y\) at that fixed value of \(x\).</p>
 
-<p>The <em>conditional density of \(Y\) given \(X=x\)</em> is defined as: \[{f_{\tiny{Y|X}}}(y|x) = \frac{f(x,y)}{{f_{\tiny{X}}}(x)}\] wherever \({f_{\tiny{X}}}(x) &gt; 0\). *Note: what is meant by this is \({f_{\tiny{X|Y}}}\) is only defined whenever \({f_{\tiny{_}}}X(x)=0.\) One still needs to carefully consider the support of \({f_{\tiny{Y|X}}}.\).</p>
+<p>The <em>conditional density of \(Y\) given \(X=x\)</em> is defined as: \[{f_{\tiny{Y|X}}}(y|x) = \frac{f(x,y)}{{f_{\tiny{X}}}(x)}\] wherever \({f_{\tiny{X}}}(x) &gt; 0\). <em>Note: what is meant by this is \({f_{\tiny{X|Y}}}\) is only even defined whenever \({f_{\tiny{X}}}(x)&gt;0.\) One still needs to carefully consider the support of \({f_{\tiny{Y|X}}}.\)</em></p>
 
 <p>Examples:</p>
 
 <ol>
 <li>\(f(x, y) = \frac{1}{\pi}\) on \(x^2 + y^2 \le 1\).</li>
 <li>\(f(x,y) = \lambda^2e^{-\lambda y}\) on \(0 &lt; x &lt; y\).</li>
-</ol>
-
-</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>the bivariate normal distributions - an important class of joint distributions</h2></hgroup><article  id="the-bivariate-normal-distributions---an-important-class-of-joint-distributions">
-
-</article></slide><slide class=''><hgroup><h2>since civilization is over anyway&#8230;</h2></hgroup><article  id="since-civilization-is-over-anyway..." class="build">
-
-<p>Let&#39;s do something <strong>crazy</strong>. Recall \(X \sim N(\mu, \sigma^2)\) has density for all \(x\in\mathbb{R}\): \[{f_{\tiny{X}}}(x) = \frac{1}{\sigma\sqrt{2\pi}}
-\exp\left(-\frac{1}{2}\frac{(x-\mu)^2}{\sigma^2}\right)\]</p>
-
-<p>Re-imagine \(x\) and \(\mu\) as a column vectors with one element each: \(\mathbf{x} = \begin{pmatrix}x\end{pmatrix}\) and \(\mathbf{\mu} = \begin{pmatrix}\mu\end{pmatrix}.\) Re-imagine \(\sigma^2\) as a \(1\times 1\) matrix \(\mathbf\Sigma = \begin{pmatrix}\sigma^2\end{pmatrix}\).</p>
-
-<p>Note that \(\det{\mathbf\Sigma} = |\mathbf\Sigma| = \sigma^2\) and \(\mathbf\Sigma^{-1} = \frac{1}{\sigma^2},\) and:</p>
-
-<p>\[{f_{\tiny{X}}}(x) = \frac{1}{|\mathbf\Sigma|^{1/2}(2\pi)^{1/2}}
-\exp\left(-\frac{1}{2}(\mathbf{x}-\mathbf\mu)^t\mathbf\Sigma^{-1}(\mathbf{x}-\mathbf\mu)\right)\]</p>
-
-</article></slide><slide class=''><hgroup><h2>bivariate normal</h2></hgroup><article  id="bivariate-normal">
-
-<p>The random variables \(X_1\) and \(X_2\) have a bivariate normal distribution with paramaters \(\mu_1\), \(\mu_2\), \(\sigma^2_1&gt;0\), \(\sigma^2_2&gt;0\), and \(-1&lt;\rho&lt;1\) if:</p>
-
-<p>\[f(x_1, x_2) = \frac{1}{|\mathbf\Sigma|^{1/2}(2\pi)^{2/2}}
-\exp\left(-\frac{1}{2}(\mathbf{x}-\mathbf\mu)^t\mathbf\Sigma^{-1}(\mathbf{x}-\mathbf\mu)\right)\]</p>
-
-<p>where:</p>
-
-<p>\[\mathbf{x} = \begin{pmatrix}x_1 \\ x_2\end{pmatrix}
-\qquad
-\mathbf{\mu} = \begin{pmatrix}\mu_1 \\ \mu_2\end{pmatrix}
-\qquad
-\mathbf\Sigma = \begin{pmatrix}\sigma_1^2 &amp; \rho\sigma_1\sigma_2\\
-\rho\sigma_1\sigma_2 &amp; \sigma_2^2\end{pmatrix}\]</p>
-
-</article></slide><slide class=''><hgroup><h2>book version of density</h2></hgroup><article  id="book-version-of-density">
-
-<p>Some work will reveal that this is equivalent to the formula given in the textbook.</p>
-
-<p>These densities actually look like &quot;bells&quot;.</p>
-
-<p>What if \(\rho = 0\)?</p>
-
-<p>The densities have the interesting properties that the <em>marginal distributions</em> are normal, and the <em>conditional distributions</em> are also normal.</p></article></slide>
+</ol></article></slide>
 
 
   <slide class="backdrop"></slide>

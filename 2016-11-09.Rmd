@@ -75,50 +75,10 @@ The concept is similar. We examine a "slice" of the joint density at, say $X=x$ 
 
 The *conditional density of $Y$ given $X=x$* is defined as:
 $$\f{Y|X}(y|x) = \frac{f(x,y)}{\f{X}(x)}$$
-wherever $\f{X}(x) > 0$. *Note: what is meant by this is $\f{X|Y}$ is only defined whenever $\f_X(x)=0.$ One still needs to carefully consider the support of $\f{Y|X}.$.
+wherever $\f{X}(x) > 0$. *Note: what is meant by this is $\f{X|Y}$ is only even defined whenever $\f{X}(x)>0.$ One still needs to carefully consider the support of $\f{Y|X}.$*
 
 Examples:
 
 1. $f(x, y) = \frac{1}{\pi}$ on $x^2 + y^2 \le 1$.
 2. $f(x,y) = \lambda^2e^{-\lambda y}$ on $0 < x < y$.
 
-# the bivariate normal distributions - an important class of joint distributions
-
-## since civilization is over anyway... { .build }
-
-Let's do something **crazy**. Recall $X \sim N(\mu, \sigma^2)$ has density for all $x\in\mathbb{R}$:
-$$\f{X}(x) = \frac{1}{\sigma\sqrt{2\pi}}
-\exp\left(-\frac{1}{2}\frac{(x-\mu)^2}{\sigma^2}\right)$$
-
-Re-imagine $x$ and $\mu$ as a column vectors with one element each: $\mathbf{x} = \begin{pmatrix}x\end{pmatrix}$ and $\mathbf{\mu} = \begin{pmatrix}\mu\end{pmatrix}.$ Re-imagine $\sigma^2$ as a $1\times 1$ matrix $\mathbf\Sigma = \begin{pmatrix}\sigma^2\end{pmatrix}$. 
-
-Note that $\det{\mathbf\Sigma} = |\mathbf\Sigma| = \sigma^2$ and $\mathbf\Sigma^{-1} = \frac{1}{\sigma^2},$ and:
-
-$$\f{X}(x) = \frac{1}{|\mathbf\Sigma|^{1/2}(2\pi)^{1/2}}
-\exp\left(-\frac{1}{2}(\mathbf{x}-\mathbf\mu)^t\mathbf\Sigma^{-1}(\mathbf{x}-\mathbf\mu)\right)$$
-
-## bivariate normal
-
-The random variables $X_1$ and $X_2$ have a bivariate normal distribution with paramaters $\mu_1$, $\mu_2$, $\sigma^2_1>0$, $\sigma^2_2>0$, and $-1<\rho<1$ if:
-
-$$f(x_1, x_2) = \frac{1}{|\mathbf\Sigma|^{1/2}(2\pi)^{2/2}}
-\exp\left(-\frac{1}{2}(\mathbf{x}-\mathbf\mu)^t\mathbf\Sigma^{-1}(\mathbf{x}-\mathbf\mu)\right)$$
-
-where:
-
-$$\mathbf{x} = \begin{pmatrix}x_1 \\ x_2\end{pmatrix}
-\qquad
-\mathbf{\mu} = \begin{pmatrix}\mu_1 \\ \mu_2\end{pmatrix}
-\qquad
-\mathbf\Sigma = \begin{pmatrix}\sigma_1^2 & \rho\sigma_1\sigma_2\\
-\rho\sigma_1\sigma_2 & \sigma_2^2\end{pmatrix}$$
-
-## book version of density 
-
-Some work will reveal that this is equivalent to the formula given in the textbook.
-
-These densities actually look like "bells".
-
-What if $\rho = 0$?
-
-The densities have the interesting properties that the *marginal distributions* are normal, and the *conditional distributions* are also normal. 
